@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gov.gdgs.dao.BusinessDao">
+	<select id="getBusinessList" resultType="BusinessDBEntity">
+		SELECT
+		    b.entNo,
+		    b.entName,
+		    b.`code`,
+		    b.entTypeStr,
+		    b.registeredCapital,
+		    b.regorg,
+		    b.regorgStr
+		FROM
+		    t_business AS b
+		WHERE b.entName LIKE CONCAT('%', #{0}, '%' ) OR b.`code` LIKE CONCAT('%', #{0}, '%' )
+		LIMIT #{1} OFFSET #{2}
+	</select>
+	
+	<select id="getBusinessDetail" resultType="BusinessDBEntity">
+		SELECT
+		    b.entName,
+		    b.`code`,
+		    b.entTypeStr,
+		    b.registeredCapital,
+		    b.regorgStr,
+		    b.department,
+		    b.establishDate,
+		    b.tradeCode,
+		    b.sBasis,
+			b.sContent,
+			b.sAmount,
+			b.sDate,
+			b.sDepartment
+		FROM
+		    t_business AS b
+		WHERE
+		    b.entNo = #{0}
+		AND b.regorg = #{1}
+	</select>
+</mapper>

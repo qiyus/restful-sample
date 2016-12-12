@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration 
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+        <!-- 命名空间 -->
+    <typeAliases>
+         <typeAlias alias="NewsDBEntity" type="cn.gov.gdgs.dbentity.NewsDBEntity"/>
+         <typeAlias alias="SupportDBEntity" type="cn.gov.gdgs.dbentity.SupportDBEntity" />
+         <typeAlias alias="BusinessDBEntity" type="cn.gov.gdgs.dbentity.BusinessDBEntity" />
+     </typeAliases>
+    <!-- 映射map -->
+    <mappers>       
+    </mappers>
+</configuration>
